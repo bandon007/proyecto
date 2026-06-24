@@ -12,11 +12,11 @@ int main (){
     cout << "===========================" << endl;
     cout << "   MENU PARA ORDENAR       " << endl;
     cout << "===========================" << endl;
-    cout << "1. Hamburguesa $3.50" << endl;
-    cout << "2. Pizza $5.00" << endl;
-    cout << "3. Hot Dog $2.50" << endl;
-    cout << "4. Pupusas $1.00" << endl;
-    cout << "5. Panini de pollo $4.50" << endl;
+    cout << "1. Hamburguesa precio: $3.50" << endl;
+    cout << "2. Pizza precio: $5.00" << endl;
+    cout << "3. Hot Dog precio: $2.50" << endl;
+    cout << "4. Pupusas precio: $1.00" << endl;
+    cout << "5. Panini de pollo precio: $4.50" << endl;
     cin >> opcion;
     cout << "desea agregar algo mas a su platillo principal? " << endl;
     cout << "1. Si" << endl;
@@ -25,11 +25,11 @@ int main (){
     cout << "===========================" << endl;
     cout << "   MENU PARA ORDENAR       " << endl;
     cout << "===========================" << endl;
-    cout << "1. Hamburguesa $3.50" << endl;
-    cout << "2. Pizza $5.00" << endl;
-    cout << "3. Hot Dog $2.50" << endl;
-    cout << "4. Pupusas $1.00" << endl;
-    cout << "5. Panini de pollo $4.50" << endl;
+    cout << "1. Hamburguesa precio: $3.50" << endl;
+    cout << "2. Pizza precio: $5.00" << endl;
+    cout << "3. Hot Dog precio: $2.50" << endl;
+    cout << "4. Pupusas precio: $1.00" << endl;
+    cout << "5. Panini de pollo precio: $4.50" << endl;
     }
   
     cin >> opcion;
@@ -37,9 +37,9 @@ int main (){
         cout << "===========================" << endl;
         cout << "Acompañamientos" << endl;
         cout << "===========================" << endl;
-        cout << "1. Papas fritas $1.50" << endl;
-        cout << "2. Ensalada $2.00" << endl;
-        cout << "3. Pan con Ajo $1.00" << endl;
+        cout << "1. Papas fritas precio: $1.50" << endl;
+        cout << "2. Ensalada precio: $2.00" << endl;
+        cout << "3. Pan con Ajo precio: $1.00" << endl;
     }
 else {}
 cout << "desea agregar algo mas para beber? " << endl;
@@ -50,14 +50,14 @@ if (opcion == 1) {
     cout << "===========================" << endl;
     cout << "Bebidas" << endl;
     cout << "===========================" << endl;
-    cout << "1. Agua $1.00" << endl;
-    cout << "2. Refresco $2.00" << endl;
-    cout << "3. Jugo $2.50" << endl;
-    cout << "4. Coca-Cola $1.00" << endl;
-    cout << "5. Té frio $1.00" << endl;
-    cout << "6. Café $1.50" << endl;
-    cout << "7. frozen $2.50" << endl;
-    cout << "8. Licuado $2.00" << endl;
+    cout << "1. Agua precio: $1.00" << endl;
+    cout << "2. Refresco precio: $2.00" << endl;
+    cout << "3. Jugo precio: $2.50" << endl;
+    cout << "4. Coca-Cola precio: $1.00" << endl;
+    cout << "5. Té frio precio: $1.00" << endl;
+    cout << "6. Café precio: $1.50" << endl;
+    cout << "7. frozen precio: $2.50" << endl;
+    cout << "8. Licuado precio: $2.00" << endl;
     cin >> opcion;
     cout << "cuantas bebidas desea ordenar? " << endl;
     int cantidadBebidas;
@@ -72,10 +72,10 @@ if (opcion == 1) {
     cout << "===========================" << endl;  
     cout << "Postres" << endl;
     cout << "===========================" << endl;
-    cout << "1. Pastel $3.00" << endl;
-    cout << "2. Helado $2.00" << endl;
-    cout << "3. brownie $1.50" << endl;
-    cout << "4. galletas $1.00" << endl;
+    cout << "1. Pastel precio: $3.00" << endl;
+    cout << "2. Helado precio: $2.00" << endl;
+    cout << "3. brownie precio: $1.50" << endl;
+    cout << "4. galletas precio: $1.00" << endl;
     cin >> opcion;
 cout << "cuantos postres desea ordenar? " << endl;
     int cantidadPostres;
