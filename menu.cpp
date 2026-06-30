@@ -1,133 +1,118 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//despliegue del menu de ordenamiento de platillo
-int precioPostre;
-int precioBebida;
-int opcion;
-int mesa;
+
+// Estructura para el menu de opciones
 int main (){    
-    cout << "Bienvenido , Mesa para cuantas personas desea ordenar: " << endl;   
+    // Variables para almacenar los productos y sus precios
+    string platos[5] = {"Hamburguesa", "Pizza", "Hot Dog", "Pupusas", "Panini de pollo"};
+    float precios[5] = {3.50, 5.00, 2.50, 1.00, 4.50};
+
+    string acompanamientos[3] = {"Papas fritas", "Ensalada", "Pan con Ajo"};
+    float preciosAcompanamientos[3] = {1.50, 2.00, 1.00};
+
+    string bebidas[8] = {"Agua", "Refresco", "Jugo", "Coca-Cola", "Té frio", "Café", "frozen", "Licuado"};
+    float preciosBebidas[8] = {1.00, 2.00, 2.50, 1.00, 1.00, 1.50, 2.50, 2.00};
+    
+    string postres[4] = {"Pastel", "Helado", "brownie", "galletas"};
+    float preciosPostres[4] = {3.00, 2.00, 1.50, 1.00};
+
+    string factura[20];
+    float total = 0.0;
+    int n=0;
+    float subtotal[20] = {0.0};
+
+    int mesa;
+    // Solicitar al usuario la cantidad de personas para la mesa
+    cout << "Bienvenido\nMesa para cuantas personas desea ordenar: ";
     cin >> mesa;
-    cout << "Mesa para " << mesa << " personas" << endl;
-    cout << "en un momento le mostraremos el menu para ordenar" << endl;
+    // Mostrar el menú de opciones
     cout << "===========================" << endl;
     cout << "   MENU PARA ORDENAR       " << endl;
     cout << "===========================" << endl;
-    cout << "1. Hamburguesa precio: $3.50" << endl;
-    cout << "2. Pizza precio: $5.00" << endl;
-    cout << "3. Hot Dog precio: $2.50" << endl;
-    cout << "4. Pupusas precio: $1.00" << endl;
-    cout << "5. Panini de pollo precio: $4.50" << endl;
-    cin >> opcion;
-    cout << "desea agregar algo mas a su platillo principal? " << endl;
-    cout << "1. Si" << endl;
-    cout << "2. No" << endl;
-    cin >> opcion;
-    if (opcion == 1) {
-    cout << "===========================" << endl;
-    cout << "   MENU PARA ORDENAR       " << endl;
-    cout << "===========================" << endl;
-    cout << "1. Hamburguesa precio: $3.50" << endl;
-    cout << "2. Pizza precio: $5.00" << endl;
-    cout << "3. Hot Dog precio: $2.50" << endl;
-    cout << "4. Pupusas precio: $1.00" << endl;
-    cout << "5. Panini de pollo precio: $4.50" << endl;
+    // Mostrar los productos y sus precios correspondientes
+    for (int i = 0; i < 5; i++) {
+        cout << i + 1 << ". " << platos[i] << " precio: $" << precios[i] << endl;
     }
+    // Solicitar al usuario que seleccione un platillo
+    int opcion;
+    cout << "Seleccione un platillo: ";
     cin >> opcion;
-    cout << "desea agregar algo mas a su platillo principal? " << endl;
-    cout << "1. Si" << endl;
-    cout << "2. No" << endl;
-    cin >> opcion;
-    if (opcion == 1) {
-        cout << "===========================" << endl;
-        cout << "Acompañamientos" << endl;
-        cout << "===========================" << endl;
-        cout << "1. Papas fritas precio: $1.50" << endl;
-        cout << "2. Ensalada precio: $2.00" << endl;
-        cout << "3. Pan con Ajo precio: $1.00" << endl;
+    if (opcion >= 1 && opcion <= 5) {
+        subtotal[n] = precios[opcion - 1];
+        factura[n] = platos[opcion - 1];
+        total += subtotal[n - 1];
     }
-else {}
-cout << "desea agregar algo mas para beber? " << endl;
-cout << "1. Si" << endl;
-cout << "2. No" << endl;
-cin >> opcion;
-if (opcion == 1) {
-    cout << "===========================" << endl;
-    cout << "Bebidas" << endl;
-    cout << "===========================" << endl;
-    cout << "1. Agua precio: $1.00" << endl;
-    cout << "2. Refresco precio: $2.00" << endl;
-    cout << "3. Jugo precio: $2.50" << endl;
-    cout << "4. Coca-Cola precio: $1.00" << endl;
-    cout << "5. Té frio precio: $1.00" << endl;
-    cout << "6. Café precio: $1.50" << endl;
-    cout << "7. frozen precio: $2.50" << endl;
-    cout << "8. Licuado precio: $2.00" << endl;
-    cin >> opcion;
-    cout << "cuantas bebidas desea ordenar? " << endl;
-    int cantidadBebidas;
-    cin >> cantidadBebidas;
-    cantidadBebidas = cantidadBebidas * precioBebida; // Assuming precioBebida is defined based on the selected bebida
-}       
-cout << "desea agregar algo mas para postre? " << endl;
-cout << "1. Si" << endl;
-cout << "2. No" << endl;
-cin >> opcion;
-if (opcion == 1) {
-    cout << "===========================" << endl;  
-    cout << "Postres" << endl;
-    cout << "===========================" << endl;
-    cout << "1. Pastel precio: $3.00" << endl;
-    cout << "2. Helado precio: $2.00" << endl;
-    cout << "3. brownie precio: $1.50" << endl;
-    cout << "4. galletas precio: $1.00" << endl;
-    cin >> opcion;
-cout << "cuantos postres desea ordenar? " << endl;
-    int cantidadPostres;
-    cin >> cantidadPostres;
-    cantidadPostres = cantidadPostres * precioPostre; // Assuming precioPostre is defined based on the selected postre
-}
-cout << "desea modificar su orden? " << endl;
-cout << "1. Si" << endl;
-cout << "2. No" << endl;
-cin >> opcion;
-cout << "desea ver su factura? " << endl;
-cout << "1. Si" << endl;
-cout << "2. No" << endl;
-cin >> opcion;
-
-cout << "Desea ver su factura y pagar la cuenta? " << endl;
-    cout << "1. Si" << endl;
-    cout << "2. No" << endl;
-    cin >> opcion;
-    if (opcion == 1) {
-        cout << "Generando factura..." << endl;
-        cout << "===========================" << endl;
-        cout << "Factura" << endl;
-        cout << "===========================" << endl;
-        cout << "Mesa para " << mesa << " personas" << endl;
-        cout << "Platillo principal: " << endl;
-        cout << "Acompañamientos: " << endl;
-        cout << "Bebidas: " << endl;
-        cout << "Postres: " << endl;
-        cout << "Total a pagar: $" << endl;
-        cout << "Desea pagar con tarjeta o efectivo? " << endl;
-        cout << "1. Tarjeta" << endl;
-        cout << "2. Efectivo" << endl;
-        if (opcion == 1) {
-            cout << "Procesando pago con tarjeta..." << endl;
-            cout << "Pago realizado con exito. ¡Gracias por su compra!" << endl;
-        } else if (opcion == 2) {
-            cout << "Procesando pago en efectivo..." << endl;
-            cout << "Pago realizado con exito. ¡Gracias por su compra!" << endl;
-        } else {
-            cout << "Opcion no valida. No se realizo el pago." << endl;
+    // Solicitar al usuario si desea agregar acompañamientos, bebidas o postres    
+    char agregarMas;
+    cout << "Desea agregrar un acompanamiento? (s/n): " << endl;
+    cin >> agregarMas;
+    if (agregarMas == 's' || agregarMas == 'S') {
+        for (int i = 0; i < 3; i++) 
+            cout << i + 1 << ". " << acompanamientos[i] << " precio: $" << preciosAcompanamientos[i] << endl;
+        cin >> opcion;
+        if (opcion >= 1 && opcion <= 3) {
+            subtotal[n] = preciosAcompanamientos[opcion - 1];
+            factura[n] = acompanamientos[opcion - 1];
+            total += subtotal[n - 1];
         }
-        // Aquí irá la lógica para generar y mostrar la factura
-    } else {
-        cout << "Gracias por su visita. ¡Hasta luego!" << endl;
+    }
+    cout << "Desea agregar una bebida? (s/n): " << endl;
+    cin >> agregarMas;
+    if (agregarMas == 's' || agregarMas == 'S') {
+        for (int i = 0; i < 8; i++)
+            cout << i + 1 << ". " << bebidas[i] << " precio: $" << preciosBebidas[i] << endl;
+        cin >> opcion;
+        if (opcion >= 1 && opcion <= 8) {
+            int cantidadBebidas;
+            cout << "Cuantas bebidas desea ordenar? " << endl;
+            cin >> cantidadBebidas;
+            subtotal[n] = preciosBebidas[opcion - 1] * cantidadBebidas;
+            factura[n] = bebidas[opcion - 1];
+            total += subtotal[n - 1];
+            n++;
+        }
+    }
+    
+    cout << "Desea agregar un postre? (s/n): " << endl;
+    cin >> agregarMas;
+    if (agregarMas == 's' || agregarMas == 'S') {
+        for (int i = 0; i < 4; i++)
+            cout << i + 1 << ". " << postres[i] << " precio: $" << preciosPostres[i] << endl;
+        cin >> opcion;
+        if (opcion >= 1 && opcion <= 4) {
+            int cantidadPostres;
+            cout << "Cuantos postres desea ordenar? " << endl;
+            cin >> cantidadPostres;
+            subtotal[n] = preciosPostres[opcion - 1] * cantidadPostres;
+            factura[n] = postres[opcion - 1];
+            total += subtotal[n - 1];
+            n++;
+        }
+    }
+    // Mostrar la factura final y el total a pagar
+    cout << " ===== FACTURA ===== " << endl;
+    cout << "Mesa para " << mesa << " personas" << endl;
+    for (int i = 0; i < n; i++) {
+        cout << factura[i] << " - $" << subtotal[i] << endl;
     }
 
+    cout << "--------------------------" << endl;
+    cout << "Total a pagar: $" << total << endl;
+
+    cout << "\n Metodo de pago:\n1. Tarjeta\n2. Efectivo" << endl;
+    cin >> opcion;
+    // Procesando el pago a realizar
+    if(opcion == 1) {
+        cout << "Procesando pago con tarjeta..." << endl;
+        cout << "Pago realizado con exito. ¡Gracias por su compra!" << endl;
+    } else if (opcion == 2) {
+        cout << "Procesando pago en efectivo..." << endl;
+        cout << "Pago realizado con exito. ¡Gracias por su compra!" << endl;
+    } else 
+        cout << "Opcion no valida. No se realizo el pago." << endl;
+    cout << "Gracias por su visita. ¡Hasta luego!" << endl;
     return 0;
+    
+
 }
