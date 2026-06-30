@@ -4,10 +4,10 @@ using namespace std;
 //despliegue del menu de ordenamiento de platillo
 int precioPostre;
 int precioBebida;
-int main (){
-    int opcion;
-    cout << "Bienvenido , Mesa par cuanrto de personas desea ordenar: " << endl;
-    int mesa;
+int opcion;
+int mesa;
+int main (){    
+    cout << "Bienvenido , Mesa para cuantas personas desea ordenar: " << endl;   
     cin >> mesa;
     cout << "Mesa para " << mesa << " personas" << endl;
     cout << "en un momento le mostraremos el menu para ordenar" << endl;
